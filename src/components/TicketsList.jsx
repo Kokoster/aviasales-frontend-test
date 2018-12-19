@@ -9,7 +9,8 @@ export default class TicketsList extends React.Component {
 		console.log(tickets)
 
 		return <div>
-			{tickets.map(ticket => <Ticket />)}
+			{tickets.map(ticket => <Ticket
+				ticket={ticket} />)}
 		</div>
 	}
 }	
