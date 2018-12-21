@@ -20,7 +20,7 @@ export default class Ticket extends React.Component {
 					</div>
 					<div className='row'>
 						<div className='col'>{ticket.origin}, {ticket.origin_name}</div>
-						<div className='col'>{ticket.destination}, {ticket.destination_name}</div>
+						<div className='col'>{ticket.destination_name}, {ticket.destination}</div>
 					</div>
 					<div className='row'>
 						<div className='col'>{ticket.departure_date}, Пт</div>
