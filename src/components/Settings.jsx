@@ -12,8 +12,18 @@ export default class Settings extends React.Component {
 				</div>
 				<div className='m-4' />
 				<h5 className='card-title text-left'>Количество пересадок</h5>
-				<label for='ch1'>Все</label>
-				<input id='ch1' type='checkbox' />
+				<div className='checkbox text-left'>
+					<label><input type='checkbox' value='' />Все</label>
+				</div>
+				<div className='checkbox text-left'>
+					<label><input type='checkbox' value='' />1 пересадка</label>
+				</div>
+				<div className='checkbox text-left'>
+					<label><input type='checkbox' value='' />2 пересадки</label>
+				</div>
+				<div className='checkbox text-left'>
+					<label><input type='checkbox' value='' />3 пересадки</label>
+				</div>
 			</div>
 		</div>
 	}

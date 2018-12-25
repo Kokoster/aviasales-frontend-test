@@ -12,7 +12,7 @@ export default class Ticket extends React.Component {
 					<button className='btn btn-primary'>Купить за {ticket.price}Р</button>
 				</div>
 			</div>
-			<div className='card col-5'>
+			<div className='card col-7'>
 				<div className='card-body'>
 					<div className='row'>
 						<div className='col'>{ticket.departure_time}</div>
