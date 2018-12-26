@@ -1,1 +1,1 @@
-Aviasales test project
+React frontend test task
