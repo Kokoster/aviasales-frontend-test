@@ -1,19 +1,23 @@
 ﻿import React from 'react'
 
 export default class Settings extends React.Component {
-	toggleNoStops = (e) => {
+	toggleAllStops = () => {
+		this.props.toggleAllStopsAllowed()
+	}
+
+	toggleNoStops = () => {
 		this.props.toggleNoStopsAllowed()
 	}
 
-	toggleOneStop = (e) => {
+	toggleOneStop = () => {
 		this.props.toggleOneStopAllowed()
 	}
 
-	toggleTwoStops = (e) => {
+	toggleTwoStops = () => {
 		this.props.toggleTwoStopsAllowed()
 	}
 
-	toggleThreeStops = (e) => {
+	toggleThreeStops = () => {
 		this.props.toggleThreeStopsAllowed()
 	}
 
@@ -31,7 +35,10 @@ export default class Settings extends React.Component {
 				<div className='m-4' />
 				<h5 className='card-title text-left'>Количество пересадок</h5>
 				<div className='checkbox text-left'>
-					<label><input type='checkbox' checked={stopsChoiceState.noStopsAllowed} onChange={this.toggleNoStops} />Все</label>
+					<label><input type='checkbox' checked={stopsChoiceState.allStopsAllowed} onChange={this.toggleAllStops} />Все</label>
+				</div>
+				<div className='checkbox text-left'>
+					<label><input type='checkbox' checked={stopsChoiceState.noStopsAllowed} onChange={this.toggleNoStops} />Без пересадок</label>
 				</div>
 				<div className='checkbox text-left'>
 					<label><input type='checkbox' checked={stopsChoiceState.oneStopAllowed} onChange={this.toggleOneStop} />1 пересадка</label>
