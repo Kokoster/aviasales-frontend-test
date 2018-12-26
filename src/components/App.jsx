@@ -1,15 +1,15 @@
 ﻿import React from 'react';
 import './App.css';
-import Settings from './Settings'
-import TicketsList from './TicketsList'
+import SettingsContainer from '../containers/Settings'
+import TicketsListContainer from '../containers/TicketsList'
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <div className='row'>
-          <Settings />
-          <TicketsList />
+          <SettingsContainer />
+          <TicketsListContainer />
         </div>
       </div>
     );
