@@ -4,7 +4,7 @@ import * as actionsCreators from '../actions'
 
 const mapStateToProps = ({ stopsChoiceState }) => {
 	const props = {
-		stopsChoiceState
+		stopsChoiceState,
 	}
 
 	return props

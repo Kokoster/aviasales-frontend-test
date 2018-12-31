@@ -3,7 +3,7 @@ import TicketsList from '../components/TicketsList.jsx'
 
 const mapStateToProps = ({ stopsChoiceState }) => {
 	const props = {
-		stopsChoiceState
+		stopsChoiceState,
 	}
 
 	return props

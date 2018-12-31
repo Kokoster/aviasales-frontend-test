@@ -21,6 +21,18 @@ export default class Settings extends React.Component {
 		this.props.toggleThreeStopsAllowed()
 	}
 
+	switchToRouble = () => {
+		this.props.switchToCurrency('RUB')
+	}
+
+	switchToDollar = () => {
+		this.props.switchToCurrency('USD')
+	}
+
+	swithToEuro = () => {
+		this.props.switchToCurrency('EUR')
+	}
+
 	render() {
 		const { stopsChoiceState } = this.props
 
@@ -28,9 +40,9 @@ export default class Settings extends React.Component {
 			<div className='card-body'>
 				<h5 className='card-title text-left'>Валюта</h5>
 				<div className='btn-group' role='group' aria-label='Choose currency'>
-					<button type='button' className='btn btn-secondary'>RUB</button>
-					<button type='button' className='btn btn-secondary'>USD</button>
-					<button type='button' className='btn btn-secondary'>EUR</button>
+					<button type='button' className='btn btn-secondary' onClick={this.switchToRouble}>RUB</button>
+					<button type='button' className='btn btn-secondary' onClick={this.switchToDollar}>USD</button>
+					<button type='button' className='btn btn-secondary' onClick={this.swithToEuro}>EUR</button>
 				</div>
 				<div className='m-4' />
 				<h5 className='card-title text-left'>Количество пересадок</h5>

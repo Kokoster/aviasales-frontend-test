@@ -32,6 +32,13 @@ const stopsChoiceState = handleActions({
 	threeStopsAllowed: false
 })
 
+const currencyState = handleActions({
+	[actions.switchToCurrency](state, {payload}) {
+		return payload
+	}
+}, 'RUB')
+
 export default combineReducers({
-	stopsChoiceState
+	stopsChoiceState,
+	currencyState
 })
