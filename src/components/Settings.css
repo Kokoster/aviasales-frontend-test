@@ -1,0 +1,7 @@
+﻿.onlyFilter {
+	display: none;
+}
+
+.list-group-item:hover .onlyFilter {
+	display: inline-block;
+}

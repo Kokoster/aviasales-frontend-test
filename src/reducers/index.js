@@ -23,6 +23,42 @@ const stopsChoiceState = handleActions({
 	},
 	[actions.toggleThreeStopsAllowed](state) {
 		return {...state, threeStopsAllowed: !state.threeStopsAllowed, allStopsAllowed: false}
+	},
+	[actions.switchNoStops]() {
+		return {
+			allStopsAllowed: false,
+			noStopsAllowed: true,
+			oneStopAllowed: false,
+			twoStopsAllowed: false,
+			threeStopsAllowed: false
+		}
+	},
+	[actions.switchOneStop]() {
+		return {
+			allStopsAllowed: false,
+			noStopsAllowed: false,
+			oneStopAllowed: true,
+			twoStopsAllowed: false,
+			threeStopsAllowed: false
+		}
+	},
+	[actions.switchTwoStops]() {
+		return {
+			allStopsAllowed: false,
+			noStopsAllowed: false,
+			oneStopAllowed: false,
+			twoStopsAllowed: true,
+			threeStopsAllowed: false
+		}
+	},
+	[actions.switchThreeStops]() {
+		return {
+			allStopsAllowed: false,
+			noStopsAllowed: false,
+			oneStopAllowed: false,
+			twoStopsAllowed: false,
+			threeStopsAllowed: true
+		}
 	}
 }, {
 	allStopsAllowed: true,
