@@ -4,7 +4,7 @@ import Ticket from '../components/Ticket.jsx'
 const mapStateToProps = ({ stopsChoiceState, currencyState }) => {
 	const props = {
 		stopsChoiceState,
-		current: currencyState
+		currentCurrency: currencyState
 	}
 
 	return props

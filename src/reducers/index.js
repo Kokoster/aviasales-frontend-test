@@ -1,76 +1,34 @@
 ﻿import { combineReducers } from 'redux'
 import { handleActions } from 'redux-actions'
 import * as actions from '../actions'
+import update from 'immutability-helper'
 
 const stopsChoiceState = handleActions({
-	[actions.toggleAllStopsAllowed](state) {
+	[actions.switchAllStops](state) {
 		return {
-			allStopsAllowed: !state.allStopsAllowed,
-			noStopsAllowed: false,
-			oneStopAllowed: false,
-			twoStopsAllowed: false,
-			threeStopsAllowed: false
+			allStopsAllowed: true,
+			stopsAllowed: [false, false, false, false]
 		}
 	},
-	[actions.toggleNoStopsAllowed](state) {
-		return {...state, noStopsAllowed: !state.noStopsAllowed, allStopsAllowed: false}
+	[actions.toggleStops](state, {payload: {stopsCount}}) {
+		const previousState = state.stopsAllowed[stopsCount]
+		return {...state, allStopsAllowed: false, 
+			stopsAllowed: update(state.stopsAllowed, {[stopsCount]: { $set: !previousState }})}
 	},
-	[actions.toggleOneStopAllowed](state) {
-		return {...state, oneStopAllowed: !state.oneStopAllowed, allStopsAllowed: false}
-	},
-	[actions.toggleTwoStopsAllowed](state) {
-		return {...state, twoStopsAllowed: !state.twoStopsAllowed, allStopsAllowed: false}
-	},
-	[actions.toggleThreeStopsAllowed](state) {
-		return {...state, threeStopsAllowed: !state.threeStopsAllowed, allStopsAllowed: false}
-	},
-	[actions.switchNoStops]() {
-		return {
-			allStopsAllowed: false,
-			noStopsAllowed: true,
-			oneStopAllowed: false,
-			twoStopsAllowed: false,
-			threeStopsAllowed: false
-		}
-	},
-	[actions.switchOneStop]() {
-		return {
-			allStopsAllowed: false,
-			noStopsAllowed: false,
-			oneStopAllowed: true,
-			twoStopsAllowed: false,
-			threeStopsAllowed: false
-		}
-	},
-	[actions.switchTwoStops]() {
-		return {
-			allStopsAllowed: false,
-			noStopsAllowed: false,
-			oneStopAllowed: false,
-			twoStopsAllowed: true,
-			threeStopsAllowed: false
-		}
-	},
-	[actions.switchThreeStops]() {
-		return {
-			allStopsAllowed: false,
-			noStopsAllowed: false,
-			oneStopAllowed: false,
-			twoStopsAllowed: false,
-			threeStopsAllowed: true
-		}
+	[actions.switchStops](state, {payload: {stopsCount}}) {
+		const stopsAllowed = [false, false, false, false]
+		stopsAllowed[stopsCount] = true
+		
+		return {...state, allStopsAllowed: false, stopsAllowed: stopsAllowed}
 	}
 }, {
 	allStopsAllowed: true,
-	noStopsAllowed: false,
-	oneStopAllowed: false,
-	twoStopsAllowed: false,
-	threeStopsAllowed: false
+	stopsAllowed: [false, false, false, false]
 })
 
 const currencyState = handleActions({
-	[actions.switchToCurrency](state, {payload}) {
-		return payload
+	[actions.changeCurrency](state, {payload: { newCurrency }}) {
+		return newCurrency
 	}
 }, 'RUB')
 

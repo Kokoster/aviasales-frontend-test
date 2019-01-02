@@ -1,7 +1,7 @@
-﻿.onlyFilter {
+﻿.only-filter {
 	display: none;
 }
 
-.list-group-item:hover .onlyFilter {
+.list-group-item:hover .only-filter {
 	display: inline-block;
 }

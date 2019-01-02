@@ -1,88 +1,52 @@
 ﻿import React from 'react'
 import './Settings.css'
 
+const stopsLabels = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки']
+
 export default class Settings extends React.Component {
-	toggleAllStops = () => {
-		this.props.toggleAllStopsAllowed()
+	switchAllStops = () => {
+		this.props.switchAllStops()
 	}
 
-	toggleNoStops = () => {
-		this.props.toggleNoStopsAllowed()
+	toggleStops = (stopsCount) => () => {
+		this.props.toggleStops({ stopsCount: stopsCount })
 	}
 
-	switchNoStops = () => {
-		this.props.switchNoStops()
+	switchStops = (stopsCount) => () => {
+		this.props.switchStops({ stopsCount: stopsCount })
 	}
 
-	toggleOneStop = () => {
-		this.props.toggleOneStopAllowed()
-	}
-
-	switchOneStop = () => {
-		this.props.switchOneStop()
-	}
-
-	toggleTwoStops = () => {
-		this.props.toggleTwoStopsAllowed()
-	}
-
-	switchTwoStops = () => {
-		this.props.switchTwoStops()
-	}
-
-	toggleThreeStops = () => {
-		this.props.toggleThreeStopsAllowed()
-	}
-
-	switchThreeStops = () => {
-		this.props.switchThreeStops()
-	}
-
-	switchToRouble = () => {
-		this.props.switchToCurrency('RUB')
-	}
-
-	switchToDollar = () => {
-		this.props.switchToCurrency('USD')
-	}
-
-	swithToEuro = () => {
-		this.props.switchToCurrency('EUR')
+	changeCurrency = (currency) => () => {
+		this.props.changeCurrency({ newCurrency: currency })
 	}
 
 	render() {
-		const { stopsChoiceState } = this.props
+		const { allStopsAllowed, stopsAllowed } = this.props
+
+		console.log(this.props)
+		console.log(stopsAllowed[0])
 
 		return <div className='card m-3 h-100'>
 			<div className='card-body'>
 				<h5 className='card-title text-left'>Валюта</h5>
 				<div className='btn-group' role='group' aria-label='Choose currency'>
-					<button type='button' className='btn btn-secondary' onClick={this.switchToRouble}>RUB</button>
-					<button type='button' className='btn btn-secondary' onClick={this.switchToDollar}>USD</button>
-					<button type='button' className='btn btn-secondary' onClick={this.swithToEuro}>EUR</button>
+					<button type='button' className='btn btn-secondary' onClick={this.changeCurrency('RUB')}>RUB</button>
+					<button type='button' className='btn btn-secondary' onClick={this.changeCurrency('USD')}>USD</button>
+					<button type='button' className='btn btn-secondary' onClick={this.changeCurrency('EUR')}>EUR</button>
 				</div>
 				<div className='m-4' />
 				<h5 className='card-title text-left'>Количество пересадок</h5>
 				<div className='list-group'>
 					<div className='checkbox text-left list-group-item list-group-item-action'>
-						<label><input type='checkbox' checked={stopsChoiceState.allStopsAllowed} onChange={this.toggleAllStops} />Все</label>
+						<label><input type='checkbox' checked={allStopsAllowed} onChange={this.switchAllStops} />Все</label>
 					</div>
-					<div className='checkbox text-left list-group-item list-group-item-action'>
-						<label><input type='checkbox' checked={stopsChoiceState.noStopsAllowed} onChange={this.toggleNoStops} />Без пересадок</label>
-						<button type='button' className='btn btn-link onlyFilter' onClick={this.switchNoStops}>ТОЛЬКО</button>
-					</div>
-					<div className='checkbox text-left list-group-item list-group-item-action'>
-						<label><input type='checkbox' checked={stopsChoiceState.oneStopAllowed} onChange={this.toggleOneStop} />1 пересадка</label>
-						<button type='button' className='btn btn-link onlyFilter' onClick={this.switchOneStop}>ТОЛЬКО</button>
-					</div>
-					<div className='checkbox text-left list-group-item list-group-item-action'>
-						<label><input type='checkbox' checked={stopsChoiceState.twoStopsAllowed} onChange={this.toggleTwoStops} />2 пересадки</label>
-						<button type='button' className='btn btn-link onlyFilter' onClick={this.switchTwoStops}>ТОЛЬКО</button>
-					</div>
-					<div className='checkbox text-left list-group-item list-group-item-action'>
-						<label><input type='checkbox' checked={stopsChoiceState.threeStopsAllowed} onChange={this.toggleThreeStops} />3 пересадки</label>
-						<button type='button' className='btn btn-link onlyFilter' onClick={this.switchThreeStops}>ТОЛЬКО</button>
-					</div>
+
+					{stopsLabels.map((label, index) => 
+						<div key={index} className='checkbox text-left list-group-item list-group-item-action'>
+							<label><input type='checkbox' checked={stopsAllowed[index]} onChange={this.toggleStops(index)} />{label}</label>
+							<button type='button' className='btn btn-link only-filter' onClick={this.switchStops(index)}>ТОЛЬКО</button>
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
