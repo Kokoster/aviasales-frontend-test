@@ -1,5 +1,5 @@
 ﻿import React from 'react'
-import temp from '../resources/temp.jpg'
+import taLogo from '../resources/ta-logo2.png'
 
 const currencyConstants = {
 	'RUB': [1.0, '\u20BD'],
@@ -20,8 +20,8 @@ export default class Ticket extends React.Component {
 		return <div className='row m-3'>
 			<div className='card'>
 				<div className='card-body'>
-					<img className='rounded mx-auto d-block m-3' src='' alt='Company label' style={{height:'50px', width:'40px'}}></img>
-					<button className='btn btn-primary'>Купить за {this.convertPrice(ticket.price)}</button>
+					<img className='rounded mx-auto d-block m-3' src={taLogo} alt='Company label' style={{height:'69px', width:'180px'}}></img>
+					<button className='btn btn-primary'>Купить <br /> за {this.convertPrice(ticket.price)}</button>
 				</div>
 			</div>
 			<div className='card col'>
