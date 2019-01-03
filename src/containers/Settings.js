@@ -2,9 +2,10 @@
 import Settings from '../components/Settings.jsx'
 import * as actionsCreators from '../actions'
 
-const mapStateToProps = ({ stopsChoiceState }) => {
+const mapStateToProps = ({ stopsChoiceState, currencyState }) => {
 	const props = {
-		...stopsChoiceState
+		...stopsChoiceState,
+		currentCurrency: currencyState
 	}
 
 	return props

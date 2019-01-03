@@ -1,4 +1,14 @@
-﻿.buy-button {
-	background-color: #ff751a;
-	border-color: #ff751a; 
+﻿.buy-btn,
+.buy-btn:active,
+.buy-btn:focus,
+.buy-btn.active {
+  color: #ffffff;
+  background-color: #ff751a;
+  border-color: #ff751a;
+}
+
+.buy-btn:hover {
+  color: #ffffff;
+  background-color: #ff8533;
+  border-color: #ff8533;
 }

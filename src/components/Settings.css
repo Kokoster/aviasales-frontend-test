@@ -5,3 +5,25 @@
 .list-group-item:hover .only-filter {
 	display: inline-block;
 }
+
+.btn-currency {
+	font-weight: bold;
+	color: #2e8dff;
+ 	background-color: #ffffff;
+  	border-color: #bcbcbc;
+}
+
+.btn-currency:hover {
+  color: #3078ff;
+  background-color: #e8f0ff;
+  border-color: #2e8dff;
+}
+
+.btn-currency.btn-default:active,
+.btn-currency.btn-default.active,
+.btn-currency.btn-default.focus,
+.btn-currency.btn-default:focus {
+  color: #ffffff;
+  background-color: #2e8dff;
+  border-color: #2e8dff;
+}

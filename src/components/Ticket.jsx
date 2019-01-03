@@ -21,7 +21,7 @@ export default class Ticket extends React.Component {
 			<div className='card'>
 				<div className='card-body'>
 					<img className='rounded mx-auto d-block m-3' src={taLogo} alt='Company label' style={{height:'69px', width:'180px'}}></img>
-					<button className='btn btn-primary buy-button'>Купить <br /> за {this.convertPrice(ticket.price)}</button>
+					<button className='btn btn-primary buy-btn'>Купить <br /> за {this.convertPrice(ticket.price)}</button>
 				</div>
 			</div>
 			<div className='card col'>
