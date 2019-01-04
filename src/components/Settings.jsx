@@ -43,16 +43,16 @@ export default class Settings extends React.Component {
 
 		return <div className='list-group'>
 			<div className='checkbox text-left list-group-item list-group-item-action'>
-				<label>
+				<label className='m-0'>
 					<input type='checkbox' className='default-checkbox' checked={allStopsAllowed} onChange={this.switchAllStops} />
-					<span className="custom-checkbox" />
+					<span className='custom-checkbox' />
 					Все
 				</label>
 			</div>
 
 			{stopsLabels.map((label, index) => 
 				<div key={index} className='checkbox text-left list-group-item list-group-item-action'>
-					<label>
+					<label className='m-0'>
 						<input className='default-checkbox' type='checkbox' checked={stopsAllowed[index]} onChange={this.toggleStops(index)} />
 						<span className='custom-checkbox' />		
 						{label}
@@ -64,12 +64,12 @@ export default class Settings extends React.Component {
 	}
 
 	render() {
-		return <div className='card m-3 h-100'>
-			<div className='card-body'>
-				<h5 className='card-title text-left'>ВАЛЮТА</h5>
+		return <div className='m-3 h-100'>
+			<div className='settings'>
+				<h5 className='text-left'>ВАЛЮТА</h5>
 				{this.renderCurrencySwitcher()}
 				<div className='m-4' />
-				<h5 className='card-title text-left'>КОЛИЧЕСТВО ПЕРЕСАДОК</h5>
+				<h5 className='text-left'>КОЛИЧЕСТВО ПЕРЕСАДОК</h5>
 				{this.renderStopsFilter()}
 			</div>
 		</div>

@@ -1,15 +1,30 @@
-﻿.btn-link:hover {
+﻿.settings {
+	border-style: solid;
+  	border-width: 1px;
+}
+
+.settings > h5 {
+	padding: 20px;
+	margin: 0px;
+}
+
+.btn-link:hover {
 	text-decoration: none;
 }
 
 .only-filter {
 	display: none;
 	float: right;
+	padding: 0 0 0 0px;
+}
+
+.list-group {
+	padding-bottom: 20px;
 }
 
 .list-group-item {
+	height: 50px;
 	border: none;
-	padding: 5px;
 }
 
 .list-group-item:hover {
@@ -18,19 +33,20 @@
 
 .list-group-item:hover .only-filter {
 	display: inline-block;
+	vertical-align: middle;
 }
 
 .btn-currency {
 	font-weight: bold;
-	color: #2e8dff;
+	color: #008ff7;
  	background-color: #ffffff;
   	border-color: #bcbcbc;
 }
 
 .btn-currency:hover {
-  color: #3078ff;
+  color: #008ff7;
   background-color: #eaf8ff;
-  border-color: #2e8dff;
+  border-color: #008ff7;
 }
 
 .btn-currency:active,
@@ -38,8 +54,8 @@
 .btn-currency.focus,
 .btn-currency:focus {
   color: #ffffff;
-  background-color: #2e8dff;
-  border-color: #2e8dff;
+  background-color: #008ff7;
+  border-color: #008ff7;
 }
 
 .default-checkbox {
