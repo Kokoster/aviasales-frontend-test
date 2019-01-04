@@ -22,41 +22,55 @@ export default class Settings extends React.Component {
 		this.props.changeCurrency({ newCurrency: currency })
 	}
 
+	renderCurrencySwitcher() {
+		return <div className='btn-group' role='group' aria-label='Choose currency'>
+			{currencyOptions.map(currency => {
+				const buttonClasses = cn({
+					btn: true,
+					'btn-default': true,
+					'btn-currency': true,
+					active: currency === this.props.currentCurrency
+				})
+
+				return <button type='button' key={currency} 
+					className={buttonClasses} onClick={this.changeCurrency(currency)}>{currency}</button>
+			})}
+		</div>
+	}
+
+	renderStopsFilter() {
+		const { allStopsAllowed, stopsAllowed } = this.props
+
+		return <div className='list-group'>
+			<div className='checkbox text-left list-group-item list-group-item-action'>
+				<label>
+					<input type='checkbox' className='default-checkbox' checked={allStopsAllowed} onChange={this.switchAllStops} />
+					<span className="custom-checkbox" />
+					Все
+				</label>
+			</div>
+
+			{stopsLabels.map((label, index) => 
+				<div key={index} className='checkbox text-left list-group-item list-group-item-action'>
+					<label>
+						<input className='default-checkbox' type='checkbox' checked={stopsAllowed[index]} onChange={this.toggleStops(index)} />
+						<span className='custom-checkbox' />		
+						{label}
+					</label>
+					<button type='button' className='btn btn-link only-filter' onClick={this.switchStops(index)}>ТОЛЬКО</button>
+				</div>
+			)}
+		</div>
+	}
+
 	render() {
-		const { allStopsAllowed, stopsAllowed, currentCurrency } = this.props
-
-		console.log('current currency: ' + currentCurrency)
-
 		return <div className='card m-3 h-100'>
 			<div className='card-body'>
 				<h5 className='card-title text-left'>ВАЛЮТА</h5>
-				<div className='btn-group' role='group' aria-label='Choose currency'>
-					{currencyOptions.map(currency => {
-						const buttonClasses = cn({
-							btn: true,
-							'btn-default': true,
-							'btn-currency': true,
-							active: currency === currentCurrency
-						})
-
-						return <button type='button' key={currency} 
-							className={buttonClasses} onClick={this.changeCurrency(currency)}>{currency}</button>
-					})}
-				</div>
+				{this.renderCurrencySwitcher()}
 				<div className='m-4' />
 				<h5 className='card-title text-left'>КОЛИЧЕСТВО ПЕРЕСАДОК</h5>
-				<div className='list-group'>
-					<div className='checkbox text-left list-group-item list-group-item-action'>
-						<label><input type='checkbox' checked={allStopsAllowed} onChange={this.switchAllStops} />Все</label>
-					</div>
-
-					{stopsLabels.map((label, index) => 
-						<div key={index} className='checkbox text-left list-group-item list-group-item-action'>
-							<label><input type='checkbox' checked={stopsAllowed[index]} onChange={this.toggleStops(index)} />{label}</label>
-							<button type='button' className='btn btn-link only-filter' onClick={this.switchStops(index)}>ТОЛЬКО</button>
-						</div>
-					)}
-				</div>
+				{this.renderStopsFilter()}
 			</div>
 		</div>
 	}
