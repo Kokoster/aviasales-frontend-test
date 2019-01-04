@@ -23,7 +23,7 @@ export default class Settings extends React.Component {
 	}
 
 	renderCurrencySwitcher() {
-		return <div className='btn-group' role='group' aria-label='Choose currency'>
+		return <div className='btn-group currency-btn-group' role='group' aria-label='Choose currency'>
 			{currencyOptions.map(currency => {
 				const buttonClasses = cn({
 					btn: true,

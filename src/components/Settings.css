@@ -36,7 +36,14 @@
 	vertical-align: middle;
 }
 
+.currency-btn-group {
+	display: block;
+	width: 100%;
+}
+
 .btn-currency {
+	width: 30%;
+	height: 50px;
 	font-weight: bold;
 	color: #008ff7;
  	background-color: #ffffff;
