@@ -33,13 +33,13 @@ export default class Ticket extends React.Component {
 		const { ticket } = this.props
 
 		return <div className='row m-3 ticket-box'>
-			<div className='ticket-part price-container'>
-				<img className='mx-auto d-block m-3 w-10 h-25' 
+			<div className='ticket-part price-container h-100'>
+				<img className='mb-3 w-100' 
 					src={ carriersLogos[ticket.carrier] } 
 					alt='Company label' />
 				<button className='btn buy-btn w-100'>Купить <br /> за {this.convertPrice(ticket.price)}</button>
 			</div>
-			<div className='ticket-part details-container'>
+			<div className='ticket-part details-container h-100'>
 				<div className='row'>
 					<div className='col first-layer text-left'>{ticket.departure_time}</div>
 					<div className='col'>

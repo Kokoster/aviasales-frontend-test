@@ -1,6 +1,7 @@
 ﻿.ticket-box {
 	box-shadow: 0 1px 4px 0 rgba(91,137,164,0.25);
 	border-radius: 10px;
+	height: 180px;
 }
 
 .ticket-box:hover {
@@ -9,8 +10,7 @@
 
 .ticket-part {
 	display: inline-block;
-	padding: 20px;
-	height: 160px;
+	padding: 30px;
 	background-color: #ffffff;
 }
 
@@ -21,7 +21,6 @@
 
 .details-container {
 	width: 400px;
-	top: 0px;
 	border-left: solid 1px #ECEFF1;
 	border-radius: 0px 10px 10px 0px;
 }
