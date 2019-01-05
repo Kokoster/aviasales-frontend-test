@@ -1,14 +1,54 @@
-﻿.buy-btn,
+﻿.price-container {
+	width: 200px;
+	height: 160px;
+}
+
+.flight-details {
+	width: 400px;
+	height: 160px;
+}
+
+.buy-btn,
 .buy-btn:active,
 .buy-btn:focus,
 .buy-btn.active {
   color: #ffffff;
-  background-color: #ff751a;
-  border-color: #ff751a;
+  background-color: #FF6D00;
+  border-color: #FF6D00;
 }
 
 .buy-btn:hover {
   color: #ffffff;
-  background-color: #ff8533;
-  border-color: #ff8533;
+  background-color: #FF8124;
+  border-color: #FF8124;
+}
+
+.first-layer {
+	font-family: Helvetica;
+	font-size: 32px;
+	color: #4A4A4A;
+	letter-spacing: 0;
+	line-height: 26px;
+	margin-bottom: 10px;
+}
+
+.second-layer {
+	font-family: Helvetica;
+	font-size: 12px;
+	color: #4A4A4A;
+	line-height: 18px;
+}
+
+.third-layer {
+	font-family: Helvetica;
+	font-size: 12px;
+	color: #979797;
+}
+
+.stops-label {
+	font-family: Helvetica;
+	font-size: 10px;
+	color: #979797;
+	text-align: center;
+	line-height: 12.1px;
 }
