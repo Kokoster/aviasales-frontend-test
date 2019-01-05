@@ -37,7 +37,7 @@ export default class Ticket extends React.Component {
 				<img className='mx-auto d-block m-3 w-10 h-25' 
 					src={ carriersLogos[ticket.carrier] } 
 					alt='Company label' />
-				<button className='btn btn-primary buy-btn w-100'>Купить <br /> за {this.convertPrice(ticket.price)}</button>
+				<button className='btn buy-btn w-100'>Купить <br /> за {this.convertPrice(ticket.price)}</button>
 			</div>
 			<div className='ticket-part details-container'>
 				<div className='row'>
