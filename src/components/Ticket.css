@@ -1,24 +1,47 @@
-﻿.price-container {
-	width: 200px;
-	height: 160px;
+﻿.ticket-box {
+	box-shadow: 0 1px 4px 0 rgba(91,137,164,0.25);
+	border-radius: 10px;
 }
 
-.flight-details {
-	width: 400px;
+.ticket-box:hover {
+	box-shadow: 0 5px 25px 0 rgba(91,137,164,0.10);
+}
+
+.ticket-part {
+	display: inline-block;
+	padding: 20px;
 	height: 160px;
+	background-color: #ffffff;
+}
+
+.price-container {
+	width: 200px;
+	border-radius: 10px 0px 0px 10px;
+}
+
+.details-container {
+	width: 400px;
+	top: 0px;
+	border-left: solid 1px #ECEFF1;
+	border-radius: 0px 10px 10px 0px;
+}
+
+.buy-btn {
+	font-size: 16px;
+	color: #FFFFFF;
+	letter-spacing: 0;
+	text-align: center;
 }
 
 .buy-btn,
 .buy-btn:active,
 .buy-btn:focus,
 .buy-btn.active {
-  color: #ffffff;
   background-color: #FF6D00;
   border-color: #FF6D00;
 }
 
 .buy-btn:hover {
-  color: #ffffff;
   background-color: #FF8124;
   border-color: #FF8124;
 }

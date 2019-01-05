@@ -41,26 +41,26 @@ export default class Settings extends React.Component {
 	renderStopsFilter() {
 		const { allStopsAllowed, stopsAllowed } = this.props
 
-		return <div className='list-group'>
-			<div className='checkbox text-left list-group-item list-group-item-action'>
+		return <ul className='list-group'>
+			<li className='checkbox text-left list-group-item list-group-item-action py-1'>
 				<label className='m-0'>
 					<input type='checkbox' className='default-checkbox' checked={allStopsAllowed} onChange={this.switchAllStops} />
 					<span className='custom-checkbox' />
 					Все
 				</label>
-			</div>
+			</li>
 
 			{stopsLabels.map((label, index) => 
-				<div key={index} className='checkbox text-left list-group-item list-group-item-action'>
+				<li key={index} className='checkbox text-left list-group-item list-group-item-action py-1'>
 					<label className='m-0'>
 						<input className='default-checkbox' type='checkbox' checked={stopsAllowed[index]} onChange={this.toggleStops(index)} />
 						<span className='custom-checkbox' />		
 						{label}
 					</label>
 					<button type='button' className='btn btn-link only-filter' onClick={this.switchStops(index)}>ТОЛЬКО</button>
-				</div>
+				</li>
 			)}
-		</div>
+		</ul>
 	}
 
 	render() {
@@ -68,7 +68,7 @@ export default class Settings extends React.Component {
 			<div className='settings'>
 				<h5 className='text-left'>ВАЛЮТА</h5>
 				{this.renderCurrencySwitcher()}
-				<div className='m-4' />
+				<div className='m-3' />
 				<h5 className='text-left'>КОЛИЧЕСТВО ПЕРЕСАДОК</h5>
 				{this.renderStopsFilter()}
 			</div>

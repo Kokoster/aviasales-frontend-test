@@ -1,12 +1,18 @@
 ﻿.settings {
 	background-color: #ffffff;
-	border-style: solid;
-  	border-width: 1px;
+	box-shadow: 0 1px 4px 0 rgba(91,137,164,0.25);
+	border-radius: 10px;
+	width: 250px;
 }
 
 .settings > h5 {
 	padding: 20px;
+	padding-bottom: 10px;
 	margin: 0px;
+
+	font-size: 12px;
+	color: #4A4A4A;
+	line-height: 19px;
 }
 
 .btn-link:hover {
@@ -17,6 +23,10 @@
 	display: none;
 	float: right;
 	padding: 0 0 0 0px;
+
+	font-size: 11px;
+	color: #2196F3;
+	line-height: 35px;
 }
 
 .list-group {
@@ -24,8 +34,9 @@
 }
 
 .list-group-item {
-	height: 50px;
+	height: 40px;
 	border: none;
+	margin: 0px;
 }
 
 .list-group-item:hover {
@@ -40,15 +51,20 @@
 .currency-btn-group {
 	display: block;
 	width: 100%;
+	/*padding: 10px;*/
 }
 
 .btn-currency {
+	border-radius: 5px;
 	width: 30%;
 	height: 50px;
 	font-weight: bold;
 	color: #008ff7;
  	background-color: #ffffff;
   	border-color: #bcbcbc;
+
+	font-size: 12px;
+	line-height: 22px;
 }
 
 .btn-currency:hover {
@@ -66,29 +82,35 @@
   border-color: #008ff7;
 }
 
+.checkbox > label {
+	font-size: 13px;
+	color: #4A4A4A;
+	line-height: 35px;
+}
+
 .default-checkbox {
 	display: none;
 }
 
 .custom-checkbox {
 	background: url('../resources/checkbox.png') no-repeat;
-	background-size: 50px 25px;
+	/*background-size: 50px 25px;*/
 	margin-right: 10px;
 	cursor: pointer;
 	vertical-align: middle;
 }
 
 .default-checkbox + .custom-checkbox {
-	background-position: -25px, 0px;
-	height: 25px;
-	width: 25px;
+	background-position: -21px, 0px;
+	height: 19px;
+	width: 19px;
 	display: inline-block;
 }
 
 .default-checkbox:checked + .custom-checkbox {
-	background-position: 0px, 0px;
-	height: 25px;
-	width: 25px;
+	background-position: -1px, 0px;
+	height: 19px;
+	width: 19px;
 	display: inline-block;
 }
 

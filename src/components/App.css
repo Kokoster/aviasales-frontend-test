@@ -1,6 +1,8 @@
 ﻿.App {
   text-align: center;
   background-color: #f3f7fa;
+  font-family: Helvetica;
+  letter-spacing: 0.5px;
 }
 
 .App-header {

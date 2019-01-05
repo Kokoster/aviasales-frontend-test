@@ -32,35 +32,31 @@ export default class Ticket extends React.Component {
 	render() {
 		const { ticket } = this.props
 
-		return <div className='row m-3'>
-			<div className='card'>
-				<div className='card-body price-container'>
-					<img className='mx-auto d-block m-3 w-10 h-25' 
-						src={ carriersLogos[ticket.carrier] } 
-						alt='Company label' />
-					<button className='btn btn-primary buy-btn w-100'>Купить <br /> за {this.convertPrice(ticket.price)}</button>
-				</div>
+		return <div className='row m-3 ticket-box'>
+			<div className='ticket-part price-container'>
+				<img className='mx-auto d-block m-3 w-10 h-25' 
+					src={ carriersLogos[ticket.carrier] } 
+					alt='Company label' />
+				<button className='btn btn-primary buy-btn w-100'>Купить <br /> за {this.convertPrice(ticket.price)}</button>
 			</div>
-			<div className='card col'>
-				<div className='card-body flight-details'>
-					<div className='row'>
-						<div className='col first-layer text-left'>{ticket.departure_time}</div>
-						<div className='col'>
-							<div className='stops-label text-uppercase'>{stopsLabels[ticket.stops]}</div>
-							<img className='mx-auto d-block'
-								src={ stopsImage }
-								alt='Stops' />
-						</div>
-						<div className='col first-layer text-right'>{ticket.arrival_time}</div>
+			<div className='ticket-part details-container'>
+				<div className='row'>
+					<div className='col first-layer text-left'>{ticket.departure_time}</div>
+					<div className='col'>
+						<div className='stops-label text-uppercase'>{stopsLabels[ticket.stops]}</div>
+						<img className='mx-auto d-block'
+							src={ stopsImage }
+							alt='Stops' />
 					</div>
-					<div className='row second-layer'>
-						<div className='col text-left'>{ticket.origin}, {ticket.origin_name}</div>
-						<div className='col text-right'>{ticket.destination_name}, {ticket.destination}</div>
-					</div>
-					<div className='row third-layer'>
-						<div className='col text-left'>{ticket.departure_date}, Пт</div>
-						<div className='col text-right'>{ticket.arrival_date}, Пт</div>
-					</div>
+					<div className='col first-layer text-right'>{ticket.arrival_time}</div>
+				</div>
+				<div className='row second-layer'>
+					<div className='col text-left'>{ticket.origin}, {ticket.origin_name}</div>
+					<div className='col text-right'>{ticket.destination_name}, {ticket.destination}</div>
+				</div>
+				<div className='row third-layer'>
+					<div className='col text-left'>{ticket.departure_date}, Пт</div>
+					<div className='col text-right'>{ticket.arrival_date}, Пт</div>
 				</div>
 			</div>
 		</div>
