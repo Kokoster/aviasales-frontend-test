@@ -1,9 +1,13 @@
 ﻿import { connect } from 'react-redux'
 import TicketsList from '../components/TicketsList.jsx'
 
-const mapStateToProps = ({ stopsChoiceState }) => {
+import { ticketsSelector } from '../selectors'
+
+const mapStateToProps = ( state ) => {
 	const props = {
-		...stopsChoiceState,
+		...state.fetchingTicketsState,
+		tickets: ticketsSelector(state),
+		currentCurrency: state.currencyState,
 	}
 
 	return props

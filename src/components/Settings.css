@@ -92,11 +92,14 @@
 	display: none;
 }
 
+.stop {
+	cursor: pointer;
+}
+
 .custom-checkbox {
 	background: url('../resources/checkbox.png') no-repeat;
 	/*background-size: 50px 25px;*/
 	margin-right: 10px;
-	cursor: pointer;
 	vertical-align: middle;
 }
 

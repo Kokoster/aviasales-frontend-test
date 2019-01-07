@@ -43,7 +43,7 @@ export default class Settings extends React.Component {
 
 		return <ul className='list-group'>
 			<li className='checkbox text-left list-group-item list-group-item-action py-1'>
-				<label className='m-0'>
+				<label className='m-0 stop'>
 					<input type='checkbox' className='default-checkbox' checked={allStopsAllowed} onChange={this.switchAllStops} />
 					<span className='custom-checkbox' />
 					Все
@@ -52,7 +52,7 @@ export default class Settings extends React.Component {
 
 			{stopsLabels.map((label, index) => 
 				<li key={index} className='checkbox text-left list-group-item list-group-item-action py-1'>
-					<label className='m-0'>
+					<label className='m-0 stop'>
 						<input className='default-checkbox' type='checkbox' checked={stopsAllowed[index]} onChange={this.toggleStops(index)} />
 						<span className='custom-checkbox' />		
 						{label}

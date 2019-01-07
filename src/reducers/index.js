@@ -2,6 +2,7 @@
 import { handleActions } from 'redux-actions'
 import * as actions from '../actions'
 import update from 'immutability-helper'
+import { uniqueId } from 'lodash'
 
 const stopsChoiceState = handleActions({
 	[actions.switchAllStops](state) {
@@ -32,7 +33,29 @@ const currencyState = handleActions({
 	}
 }, 'RUB')
 
+const fetchingTicketsState = handleActions({
+	[actions.fetchTicketsRequest]() {
+		return 'requested'
+	},
+	[actions.fetchTicketsSuccess]() {
+		return 'succeeded'
+	},
+	[actions.fetchTicketsFailure]() {
+		return 'failed'
+	}
+}, 'none')
+
+const tickets = handleActions({
+	[actions.fetchTicketsSuccess](state, { payload: { tickets } } ) {
+		return tickets.map(ticket => { 
+			return {...ticket, id: uniqueId()}
+		})
+	}
+}, [])
+
 export default combineReducers({
 	stopsChoiceState,
-	currencyState
+	currencyState,
+	fetchingTicketsState,
+	tickets
 })
