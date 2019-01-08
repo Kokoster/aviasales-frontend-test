@@ -1,5 +1,7 @@
 ﻿import React from 'react'
 
+import './TicketsList.css'
+
 import Ticket from './Ticket.jsx'
 
 export default class TicketsList extends React.Component {
@@ -7,7 +9,7 @@ export default class TicketsList extends React.Component {
 		const { currentCurrency, tickets } = this.props
 
 		return (
-			<div>  
+			<div className='tickets-list'>
 				{tickets.map(ticket => <Ticket key={ticket.id} ticket={ticket} currentCurrency={currentCurrency} />)}
 			</div>
 		)

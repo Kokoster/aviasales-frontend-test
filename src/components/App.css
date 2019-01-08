@@ -1,8 +1,10 @@
 ﻿.App {
   text-align: center;
+  justify-content: center;
   background-color: #f3f7fa;
   font-family: Helvetica;
   letter-spacing: 0.5px;
+  min-height: 1000px;
 }
 
 .App-header {

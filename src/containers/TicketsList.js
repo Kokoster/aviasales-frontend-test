@@ -5,7 +5,7 @@ import { ticketsSelector } from '../selectors'
 
 const mapStateToProps = ( state ) => {
 	const props = {
-		...state.fetchingTicketsState,
+		fetchingTicketsState: state.fetchingTicketsState,
 		tickets: ticketsSelector(state),
 		currentCurrency: state.currencyState,
 	}

@@ -1,4 +1,5 @@
 ﻿.ticket-box {
+	margin: 20px;
 	box-shadow: 0 1px 4px 0 rgba(91,137,164,0.25);
 	border-radius: 10px;
 	height: 180px;

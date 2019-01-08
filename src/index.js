@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './index.css'
-import App from './components/App.jsx'
+import App from './containers/App.js'
 import reducers from './reducers'
 import * as serviceWorker from './serviceWorker'
 import { fetchTickets } from './actions'

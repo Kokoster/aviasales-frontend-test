@@ -32,7 +32,7 @@ export default class Ticket extends React.Component {
 	render() {
 		const { ticket } = this.props
 
-		return <div className='row m-3 ticket-box'>
+		return <div className='row ticket-box'>
 			<div className='ticket-part price-container h-100'>
 				<img className='mb-3 w-100' 
 					src={ carriersLogos[ticket.carrier] } 

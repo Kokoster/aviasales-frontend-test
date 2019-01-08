@@ -64,14 +64,12 @@ export default class Settings extends React.Component {
 	}
 
 	render() {
-		return <div className='m-3 h-100'>
-			<div className='settings'>
-				<h5 className='text-left'>ВАЛЮТА</h5>
-				{this.renderCurrencySwitcher()}
-				<div className='m-3' />
-				<h5 className='text-left'>КОЛИЧЕСТВО ПЕРЕСАДОК</h5>
-				{this.renderStopsFilter()}
-			</div>
+		return <div className='h-100 settings'>
+			<h5 className='text-left'>ВАЛЮТА</h5>
+			{this.renderCurrencySwitcher()}
+			<div className='m-3' />
+			<h5 className='text-left'>КОЛИЧЕСТВО ПЕРЕСАДОК</h5>
+			{this.renderStopsFilter()}
 		</div>
 	}
 }
