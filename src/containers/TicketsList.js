@@ -1,5 +1,5 @@
 ﻿import { connect } from 'react-redux'
-import TicketsList from '../components/TicketsList.jsx'
+import TicketsList from '../components/tickets-list/TicketsList.jsx'
 
 import { ticketsSelector } from '../selectors'
 

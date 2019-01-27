@@ -1,5 +1,5 @@
 ﻿import { connect } from 'react-redux'
-import Settings from '../components/Settings.jsx'
+import Settings from '../components/settings/Settings.jsx'
 import * as actionsCreators from '../actions'
 
 const mapStateToProps = ({ stopsChoiceState, currencyState }) => {

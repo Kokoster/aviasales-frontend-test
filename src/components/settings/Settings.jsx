@@ -1,6 +1,10 @@
 ﻿import React from 'react'
 import cn from 'classnames'
+
 import './Settings.css'
+import './__Header.css'
+import './__CurrencyBtnGroup.css'
+import './__CurrencyButton.css'
 
 const stopsLabels = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки']
 const currencyOptions = ['RUB', 'USD', 'EUR']
@@ -23,12 +27,12 @@ export default class Settings extends React.Component {
 	}
 
 	renderCurrencySwitcher() {
-		return <div className='btn-group currency-btn-group' role='group' aria-label='Choose currency'>
+		return <div className='btn-group Settings__CurrencyBtnGroup' role='group' aria-label='Choose currency'>
 			{currencyOptions.map(currency => {
 				const buttonClasses = cn({
 					btn: true,
 					'btn-default': true,
-					'btn-currency': true,
+					'Settings__CurrencyButton': true,
 					active: currency === this.props.currentCurrency
 				})
 
@@ -64,11 +68,11 @@ export default class Settings extends React.Component {
 	}
 
 	render() {
-		return <div className='h-100 settings'>
-			<h5 className='text-left'>ВАЛЮТА</h5>
+		return <div className={'h-100 Settings ' + (this.props.className || '')}>
+			<h5 className='Settings__Header'>ВАЛЮТА</h5>
 			{this.renderCurrencySwitcher()}
 			<div className='m-3' />
-			<h5 className='text-left'>КОЛИЧЕСТВО ПЕРЕСАДОК</h5>
+			<h5 className='Settings__Header'>КОЛИЧЕСТВО ПЕРЕСАДОК</h5>
 			{this.renderStopsFilter()}
 		</div>
 	}

@@ -1,0 +1,8 @@
+﻿.TicketsList__Ticket {
+	margin: 0px;
+	margin-bottom: 30px;
+}
+
+.TicketsList__Ticket:last-child {
+	margin: 0px;
+}

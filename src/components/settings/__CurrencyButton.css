@@ -1,0 +1,27 @@
+﻿.Settings__CurrencyButton {
+	border-radius: 5px;
+	width: 30%;
+	height: 50px;
+	font-weight: bold;
+	color: #008ff7;
+	background-color: #ffffff;
+	border-color: #bcbcbc;
+
+	font-size: 12px;
+	line-height: 22px;
+}
+
+.Settings__CurrencyButton:hover {
+	color: #008ff7;
+	background-color: #eaf8ff;
+	border-color: #008ff7;
+}
+
+.Settings__CurrencyButton:active,
+.Settings__CurrencyButton.active,
+.Settings__CurrencyButton.focus,
+.Settings__CurrencyButton:focus {
+	color: #ffffff;
+	background-color: #008ff7;
+	border-color: #008ff7;
+}

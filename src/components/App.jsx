@@ -1,10 +1,13 @@
 ﻿import React from 'react';
-import './App.css';
-import "./Loader.css"
 import SettingsContainer from '../containers/Settings'
 import TicketsListContainer from '../containers/TicketsList'
 
 import logo from '../resources/logo.png'
+
+import './App.css';
+import './Loader.css'
+import './__Settings.css'
+import './__TicketsList.css'
 
 class App extends React.Component {
   renderLoader() {
@@ -14,8 +17,8 @@ class App extends React.Component {
   renderTickets() {
     return (
       <div className='row'>
-        <SettingsContainer className='col' />
-        <TicketsListContainer className='col' />
+        <SettingsContainer className='App__Settings' />
+        <TicketsListContainer className='App__TicketsList' />
       </div>
     ) 
   }
